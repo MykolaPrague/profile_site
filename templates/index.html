@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio – {{ name }}</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/static/favicon.ico">
+    <link rel="apple-touch-icon" href="/static/icon-180.png">
+    <link rel="manifest" href="/static/site.webmanifest">
+  </head>
+  <body>
+    <header class="container sticky-bar">
+      <nav aria-label="Primary">
+        <ul class="nav-left">
+          <li><a href="#present" data-nav>Present</a></li>
+          <li><a href="#projects" data-nav>My projects</a></li>
+          <li><a href="#contact" data-nav>Contacts</a></li>
+        </ul>
+        <ul class="nav-right">
+          <li><a href="?lang=en" hreflang="en">EN</a></li>
+          <li>
+            <button
+              id="themeToggle"
+              class="contrast outline"
+              type="button"
+              aria-label="Toggle theme"
+            >
+              🌙/☀️
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="container">
+      <!-- HERO / PRESENT -->
+      <section
+        id="present"
+        class="panel hero fullvh"
+        aria-labelledby="present-title"
+      >
+        <div class="hero-inner">
+          <h1 id="present-title" class="hello">{{ name }}</h1>
+          <img
+            class="avatar"
+            src="{{ url_for('static', filename='avatar2.png') }}"
+            alt="{{ name }} avatar"
+          />
+          <h3>Ahoj, jmenuji se {{ name }} </h3>
+          <p>
+            Jsem pražský 🇨🇿 absolvent informatiky 🎓, který vytváří štíhlé
+            webové aplikace a prototypy: Python na backendu 👨‍💻 (Flask/Django),
+            HTML/CSS/JS na frontendu a rostoucí sadu nástrojů pro automatizaci a
+            datové utility 🤖📊. Zajímá mě čitelný kód, malé iterace a design,
+            který nepřekáží ✨. V poslední době se zabývám aplikovanou umělou
+            inteligencí – klasifikací, embeddingem a drobnými agenty, kteří
+            snižují opakující se práci – a sdílím lehké články, aby ostatní
+            mohli stavět na mých poznatcích.
+          </p>
+          <p>
+            Kromě technologií se věnuji rybařeni , dlouhým procházkám s podcasty
+            🎧 a občasnému pouličnímu fotografování 📷. Nejvíc mě těší, když
+            jednoduchý skript někomu odemkne reálnou hodnotu.
+          </p>
+          <p>
+            <strong
+              Děkujeme, že jste se zastavili .
+            </strong>
+            Pojďme společně vytvořit něco užitečného. ⚡🌟
+          </p>
+          <div class="cta">
+            <a href="#projects" role="button">View projects</a>
+            <a href="#contact" class="secondary" role="button">Contact</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section
+        id="projects"
+        class="panel fullvh"
+        aria-labelledby="projects-title"
+      >
+        <h2 id="projects-title">My projects</h2>
+        <p class="tagline">
+          Python / Flask / Django · CRM mini-projekty · Jednoduché a praktické webové nástroje · se zájmem o AI 
+        </p>
+        <ul>
+          <li>
+            <a
+              href="https://lamik.pythonanywhere.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fishlog (Django) – demo
+            </a>
+          </li>
+          <li>CRM Mini (Flask) – demo/description</li>
+          <li>
+            <a 
+              href="https://mykolaprague.github.io/curlytom.github.io/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            Jednoduchý Web</a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- CONTACT -->
+      <section
+        id="contact"
+        class="panel fullvh"
+        aria-labelledby="contact-title"
+      >
+        <h2 id="contact-title">Contacts</h2>
+        <p>
+          For collaborations, freelance work, or just to say hi—reach out
+          anytime.
+        </p>
+
+        <p class="contact-email">
+          📧 <a href="mailto:hello@example.com">hello@example.com</a>
+        </p>
+
+        <div class="contact-buttons">
+          <a
+            class="contrast outline"
+            href="https://t.me/yourhandle"
+            target="_blank"
+            rel="noopener"
+            >💬 Telegram</a
+          >
+          <a
+            class="contrast outline"
+            href="https://www.linkedin.com/in/yourhandle"
+            target="_blank"
+            rel="noopener"
+            >👔 LinkedIn</a
+          >
+          <a
+            class="contrast outline"
+            href="https://github.com/yourhandle"
+            target="_blank"
+            rel="noopener"
+            >🧑‍💻 GitHub</a
+          >
+          <a
+            class="contrast outline"
+            href="https://www.upwork.com/freelancers/~yourprofile"
+            target="_blank"
+            rel="noopener"
+            >🧰 Upwork</a
+          >
+          <a
+            class="contrast outline"
+            href="https://x.com/yourhandle"
+            target="_blank"
+            rel="noopener"
+            >🐦 X / Twitter</a
+          >
+          <a
+            class="contrast outline"
+            href="https://www.buymeacoffee.com/yourhandle"
+            target="_blank"
+            rel="noopener"
+            >☕ Support</a
+          >
+        </div>
+
+        <p class="contact-meta">
+          📍 Prague, Czechia · ⏱️ Mon–Fri, 09:00–17:00 CET
+        </p>
+      </section>
+    </main>
+
+    <!-- JS: theme toggle + active link on scroll -->
+    <script>
+      // Smooth active link highlight
+      const links = document.querySelectorAll("a[data-nav]");
+      const map = new Map(
+        [...links].map((a) => [a.getAttribute("href").slice(1), a])
+      );
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              links.forEach((a) => a.classList.remove("is-active"));
+              const a = map.get(e.target.id);
+              if (a) a.classList.add("is-active");
+              history.replaceState(null, "", "#" + e.target.id);
+            }
+          });
+        },
+        { rootMargin: "-40% 0px -55% 0px", threshold: [0, 0.25, 1] }
+      );
+      document.querySelectorAll("section[id]").forEach((s) => io.observe(s));
+
+      // Theme toggle (persisted)
+      const root = document.documentElement;
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) root.setAttribute("data-theme", savedTheme);
+      const btn = document.getElementById("themeToggle");
+      const setTheme = (t) => {
+        root.setAttribute("data-theme", t);
+        localStorage.setItem("theme", t);
+      };
+      btn.addEventListener("click", () => {
+        const cur = root.getAttribute("data-theme") || "light";
+        setTheme(cur === "light" ? "dark" : "light");
+      });
+    </script>
+  </body>
+</html>

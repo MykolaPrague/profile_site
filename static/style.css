@@ -1,0 +1,165 @@
+/* Base */
+html { scroll-behavior: smooth; }
+:root { --maxw: 1100px; --radius: 16px; }
+
+/* базово (темнуватий оверлей) */
+body {
+  background-image:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), /* затемнення */
+    url("/static/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;  /* при лагу на мобілці – прибери */
+  background-position: center;
+}
+
+p {
+  font-family: "Michroma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.hello {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 15,
+    "SHLN" 50;
+}
+
+/* світла тема */
+[data-theme="light"] body {
+  background-image:
+    linear-gradient(rgba(255,255,255,.25), rgba(255,255,255,.25)), /* підсвітлення */
+    url("/static/background.png");
+}
+
+/* темна тема */
+[data-theme="dark"] body {
+  background-image:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), /* сильніше затемнення */
+    url("/static/background.png");
+}
+.container { max-width: var(--maxw); }
+#main { padding-top: 0.1rem;}
+
+nav { height: 2.5rem; }
+/* Sticky top nav with 2 ULs left/right */
+.sticky-bar {
+  position: sticky; top: 0; z-index: 20;
+  backdrop-filter: none; /* blur(8px); */
+  background: var(--pico-card-background-color, #fff);
+  padding-top: .4rem;
+  border: 2px solid transparent;               /* прозорий бордер */
+  border-image: linear-gradient(90deg, #2bdd2255 0%, #a89a3e4b 100%) 1;
+  
+}
+.sticky-bar a { font-size: 1.2rem;}
+.sticky-bar nav {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.sticky-bar .nav-left,
+.sticky-bar .nav-right {
+  display: flex; gap: .5rem; flex-wrap: wrap; align-items: center;
+  padding-right: 1rem;
+}
+
+.sticky-bar .nav-left li a,
+.sticky-bar .nav-right li a {
+  border: 1px solid;
+  border-radius: 16px;
+}
+.sticky-bar a[data-nav] { padding: .4rem .7rem; border-radius: 10px; }
+.sticky-bar a[data-nav].is-active { background: rgba(0,0,0,.08); font-weight: 600; }
+@media (prefers-color-scheme: dark) {
+  [data-theme="dark"] .sticky-bar a[data-nav].is-active { background: rgba(255,255,255,.12); }
+}
+
+/* Hero */
+.hello { font-size: clamp(2rem, 2.2vw + 1rem, 3rem); margin: 1rem 0; line-height: 1.1; text-align: center; }
+.hero { position: relative; display: grid; place-items: center;                              /* працює і з border-image */}
+.hero-inner { text-align: center; max-width: 780px; margin-inline: auto; padding-top: 0; }
+.avatar {
+  width: 240px; height: 240px; border-radius: 47%; object-fit: cover;
+  border: 3px solid rgba(14, 52, 190, 0.1); margin-bottom: .8rem;
+}
+.tagline { margin: .2rem auto 1rem; max-width: 60ch; }
+.cta { display: flex; gap: .6rem; justify-content: center; }
+
+
+/* Bottom-half background image under hero */
+.hero::after {
+  content: ""; position: absolute; left: 50%; transform: translateX(-50%);
+  bottom: 0; width: 100vw; height: 45vh;
+  background-image: var(--hero-bg, url("{{ url_for('static', filename='hero.jpg') }}"));
+  background-size: cover; background-position: center bottom; opacity: .28; pointer-events: none;
+}
+
+/* Panels / sections */
+.panel {
+  padding: 16px 18px; border-radius: var(--radius);
+  background: var(--pico-card-background-color, #fff);
+  box-shadow: 0 1px 10px rgba(0,0,0,.04);
+  scroll-margin-top: 96px;
+  border: 7px solid transparent;               /* прозорий бордер */
+  border-image: linear-gradient(90deg, #4822dd 0%, #a83e8b 100%) 1;
+  border-radius: 16px;
+}
+.fullvh { min-height: 100vh; display: grid; align-content: start; gap: 1rem; }
+
+/* Projects/Contact fine-tuning */
+#projects ul { padding-left: 1.2rem; }
+.contact-email { font-size: 1.1rem; margin: .5rem 0 1rem; }
+.contact-buttons { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; }
+.contact-meta { color: #666; margin-top: 1rem; }
+@media (prefers-color-scheme: dark) { .contact-meta { color: rgba(255,255,255,.75); } }
+
+/* Optional: section snap feeling (page-by-page scroll) */
+@media (min-width: 640px) {
+  html.snap body { scroll-snap-type: y mandatory; }
+  html.snap section.panel { scroll-snap-align: start; }
+}
+
+@media (min-width: 769px) {
+  .cta { flex-wrap: wrap; }
+  .sticky-bar {padding-left: 1rem; padding-top: 1rem;}
+
+}
+
+/* Mobile tweaks */
+@media (min-width: 426px) and (max-width: 768px) {
+  .cta { flex-wrap: wrap; }
+  .sticky-bar { padding-top: 4rem; padding-left: 1rem; padding-top: 1rem;}
+  .sticky-bar a { font-size: 1rem;}
+}
+/* Mobile tweaks */
+@media (min-width: 390px) and (max-width: 425px) {
+  .cta { flex-wrap: wrap; }
+  .sticky-bar { padding-top: 1rem; }
+  .sticky-bar a { font-size: 0.8rem;}
+}
+
+
+/* Mobile tweaks */
+@media (min-width: 341px) and (max-width: 389px) {
+  .cta { flex-wrap: wrap; }
+  .sticky-bar { padding-top: 1rem; }
+  .sticky-bar a { font-size: 0.7rem;}
+  .sticky-bar .nav-left,
+  .sticky-bar .nav-right {
+  display: flex; gap: 0.1rem; flex-wrap: wrap; align-items: center;
+}
+}
+/* Mobile tweaks */
+@media (max-width: 340px) {
+  .cta { flex-wrap: wrap; }
+  .sticky-bar { padding-top: 1rem; }
+  .sticky-bar a { font-size: 0.5rem;}
+  .sticky-bar .nav-left,
+  .sticky-bar .nav-right {
+  display: flex; gap: 0.1rem; flex-wrap: wrap; align-items: center;
+}
+}
