@@ -117,6 +117,11 @@ nav { height: 2.5rem; }
 .contact-meta { color: #666; margin-top: 1rem; }
 @media (prefers-color-scheme: dark) { .contact-meta { color: rgba(255,255,255,.75); } }
 
+.fish {
+  width: 240px; height: 350px; object-fit: cover;
+  border: 3px solid rgba(14, 52, 190, 0.1); margin-bottom: .8rem;
+}
+
 /* Optional: section snap feeling (page-by-page scroll) */
 @media (min-width: 640px) {
   html.snap body { scroll-snap-type: y mandatory; }
