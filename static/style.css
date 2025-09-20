@@ -126,17 +126,18 @@ nav { height: 2.5rem; }
 @media (min-width: 769px) {
   .cta { flex-wrap: wrap; }
   .sticky-bar {padding-left: 1rem; padding-top: 1rem;}
+  .sticky-bar a { font-size: 1.2rem;}
 
 }
 
 /* Mobile tweaks */
-@media (min-width: 426px) and (max-width: 768px) {
+@media (min-width: 515px) and (max-width: 768px) {
   .cta { flex-wrap: wrap; }
-  .sticky-bar { padding-top: 4rem; padding-left: 1rem; padding-top: 1rem;}
-  .sticky-bar a { font-size: 1rem;}
+  .sticky-bar { padding-top: 1rem; padding-left: 1rem;}
+  .sticky-bar a { font-size: 1.2rem;}
 }
 /* Mobile tweaks */
-@media (min-width: 390px) and (max-width: 425px) {
+@media (min-width: 428px) and (max-width: 514px) {
   .cta { flex-wrap: wrap; }
   .sticky-bar { padding-top: 1rem; }
   .sticky-bar a { font-size: 0.8rem;}
@@ -144,17 +145,7 @@ nav { height: 2.5rem; }
 
 
 /* Mobile tweaks */
-@media (min-width: 341px) and (max-width: 389px) {
-  .cta { flex-wrap: wrap; }
-  .sticky-bar { padding-top: 1rem; }
-  .sticky-bar a { font-size: 0.7rem;}
-  .sticky-bar .nav-left,
-  .sticky-bar .nav-right {
-  display: flex; gap: 0.1rem; flex-wrap: wrap; align-items: center;
-}
-}
-/* Mobile tweaks */
-@media (max-width: 340px) {
+@media (min-width: 343px) and (max-width: 427px) {
   .cta { flex-wrap: wrap; }
   .sticky-bar { padding-top: 1rem; }
   .sticky-bar a { font-size: 0.5rem;}
@@ -162,4 +153,25 @@ nav { height: 2.5rem; }
   .sticky-bar .nav-right {
   display: flex; gap: 0.1rem; flex-wrap: wrap; align-items: center;
 }
+}
+/* Mobile tweaks */
+@media (max-width: 342px) {
+  .cta { flex-wrap: wrap; }
+  .sticky-bar { padding-top: 1rem; }
+  .sticky-bar a { font-size: 0.2rem;}
+  .sticky-bar .nav-left,
+  .sticky-bar .nav-right {
+  display: flex; gap: 0.1rem; flex-wrap: wrap; align-items: center;
+}
+}
+
+
+/* при ≤ 1000px: фон прибираємо */
+@media (max-width: 1000px) {
+  body {
+    background-image: none !important;   /* сховати зображення та градієнт */
+    background-color: #ffffff;           /* або темний, якщо у темній темі */
+    background-attachment: scroll;       /* на всяк випадок */
+  }
+  [data-theme="dark"] body { background-color: #0f1115; }
 }
