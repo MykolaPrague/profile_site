@@ -1,0 +1,101 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: portfolio\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-22 12:00+0000\n"
+"PO-Revision-Date: 2025-09-22 12:00+0000\n"
+"Last-Translator: YOU <you@example.com>\n"
+"Language-Team: Čeština\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/index.html
+msgid "Portfolio"
+msgstr "Portfolio"
+
+msgid "Present"
+msgstr "Současnost"
+
+msgid "My projects"
+msgstr "Moje projekty"
+
+msgid "Contacts"
+msgstr "Kontakty"
+
+msgid "Toggle theme"
+msgstr "Přepnout téma"
+
+msgid "Hi, my name is %(name)s"
+msgstr "Ahoj, jmenuji se %(name)s"
+
+msgid ""
+"I’m a Prague-based 🇨🇿 Computer Science graduate 🎓 building lean web apps "
+"and prototypes: Python on the backend 👨‍💻 (Flask/Django), HTML/CSS/JS on "
+"the frontend, and a growing toolkit of automation and data utilities 🤖📊. "
+"I care about readable code, small iterations, and design that stays out of "
+"the way ✨. Lately I’ve been exploring applied AI—classification, embeddings, "
+"and tiny agents that reduce repetitive work—and sharing lightweight write-ups "
+"so others can build on top of my findings."
+msgstr ""
+"Jsem pražský 🇨🇿 absolvent informatiky 🎓, který vytváří štíhlé webové aplikace a prototypy: Python na backendu 👨‍💻 (Flask/Django), HTML/CSS/JS na frontendu a rostoucí sadu nástrojů pro automatizaci a práci s daty 🤖📊. Zajímá mě čitelný kód, malé iterace a design, který nepřekáží ✨. V poslední době se věnuji aplikované umělé inteligenci – klasifikaci, embeddingům a malým agentům, kteří snižují opakující se práci – a sdílím jednoduché články, aby ostatní mohli stavět na mých poznatcích."
+
+msgid ""
+"Beyond tech, I’m into fishing, long walks with podcasts 🎧, and the occasional street photography 📷. I’m happiest when a simple script unlocks real-world value for someone."
+msgstr ""
+"Kromě technologií se věnuji rybaření, dlouhým procházkám s podcasty 🎧 a občasné pouliční fotografii 📷. Nejvíc mě těší, když jednoduchý skript někomu přinese skutečnou hodnotu."
+
+msgid "Thanks for stopping by."
+msgstr "Děkuji, že jste se zastavili."
+
+msgid "Let’s build something useful together."
+msgstr "Pojďme společně vytvořit něco užitečného."
+
+msgid "View projects"
+msgstr "Zobrazit projekty"
+
+msgid "Contact"
+msgstr "Kontakt"
+
+msgid "Python / Flask / Django · CRM mini-projects · Simple and practical web tools · AI-curious"
+msgstr "Python / Flask / Django · CRM mini-projekty · Jednoduché a praktické webové nástroje · zájem o AI"
+
+msgid "Fishlog (Django) – demo"
+msgstr "Fishlog (Django) – ukázka"
+
+msgid "CRM Mini (Flask) – demo/description"
+msgstr "CRM Mini (Flask) – ukázka/popis"
+
+msgid "Simple Web"
+msgstr "Jednoduchý web"
+
+msgid "For collaborations, freelance work, or just to say hi—reach out anytime."
+msgstr "Pro spolupráci, zakázky na volné noze nebo jen pro pozdrav – kontaktujte mě kdykoli."
+
+msgid "koljaxp+portfolio (at) gmail (dot) com"
+msgstr "koljaxp+portfolio (zavináč) gmail (tečka) com"
+
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+msgid "GitHub"
+msgstr "GitHub"
+
+msgid "Upwork"
+msgstr "Upwork"
+
+msgid "X / Twitter"
+msgstr "X / Twitter"
+
+msgid "Support"
+msgstr "Podpořit"
+
+msgid "Prague, Czechia"
+msgstr "Praha, Česko"
+
+msgid "Mon–Fri, 09:00–17:00 CET"
+msgstr "Po–Pá, 09:00–17:00 SEČ"

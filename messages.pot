@@ -1,0 +1,153 @@
+# Translations template for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-09-22 03:38+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: templates/index.html:6
+msgid "Portfolio"
+msgstr ""
+
+#: templates/index.html:26 templates/index.html:50
+msgid "Present"
+msgstr ""
+
+#: templates/index.html:27 templates/index.html:51 templates/index.html:108
+msgid "My projects"
+msgstr ""
+
+#: templates/index.html:28 templates/index.html:52 templates/index.html:136
+msgid "Contacts"
+msgstr ""
+
+#: templates/index.html:37 templates/index.html:59
+msgid "Toggle theme"
+msgstr ""
+
+#: templates/index.html:48
+msgid "Menu"
+msgstr ""
+
+#: templates/index.html:73 templates/index.html:117
+#, python-format
+msgid "%(name)s avatar"
+msgstr ""
+
+#: templates/index.html:75
+#, python-format
+msgid "Hi, my name is %(name)s"
+msgstr ""
+
+#: templates/index.html:78
+msgid ""
+"\n"
+"            I’m a Prague-based 🇨🇿 Computer Science graduate 🎓 building "
+"lean web apps and prototypes:\n"
+"            Python on the backend 👨‍💻 (Flask/Django), HTML/CSS/JS on the "
+"frontend, and a growing toolkit of\n"
+"            automation and data utilities 🤖📊. I care about readable code,"
+" small iterations, and design that\n"
+"            stays out of the way ✨. Lately I’ve been exploring applied "
+"AI—classification, embeddings, and tiny\n"
+"            agents that reduce repetitive work—and sharing lightweight "
+"write-ups so others can build on top of my findings.\n"
+"            "
+msgstr ""
+
+#: templates/index.html:88
+msgid ""
+"\n"
+"            Beyond tech, I’m into fishing, long walks with podcasts 🎧, "
+"and the occasional street photography 📷.\n"
+"            I’m happiest when a simple script unlocks real-world value "
+"for someone.\n"
+"            "
+msgstr ""
+
+#: templates/index.html:95
+msgid "Thanks for stopping by."
+msgstr ""
+
+#: templates/index.html:96
+msgid "Let’s build something useful together."
+msgstr ""
+
+#: templates/index.html:100
+msgid "View projects"
+msgstr ""
+
+#: templates/index.html:101
+msgid "Contact"
+msgstr ""
+
+#: templates/index.html:111
+msgid ""
+"Python / Flask / Django · CRM mini-projects · Simple and practical web "
+"tools · AI-curious"
+msgstr ""
+
+#: templates/index.html:122
+msgid "Fishlog (Django) – demo"
+msgstr ""
+
+#: templates/index.html:125
+msgid "CRM Mini (Flask) – demo/description"
+msgstr ""
+
+#: templates/index.html:128
+msgid "Simple Web"
+msgstr ""
+
+#: templates/index.html:139
+msgid "For collaborations, freelance work, or just to say hi—reach out anytime."
+msgstr ""
+
+#: templates/index.html:145
+msgid "koljaxp+portfolio (at) gmail (dot) com"
+msgstr ""
+
+#: templates/index.html:150
+msgid "Telegram"
+msgstr ""
+
+#: templates/index.html:151
+msgid "LinkedIn"
+msgstr ""
+
+#: templates/index.html:152
+msgid "GitHub"
+msgstr ""
+
+#: templates/index.html:153
+msgid "Upwork"
+msgstr ""
+
+#: templates/index.html:154
+msgid "X / Twitter"
+msgstr ""
+
+#: templates/index.html:155
+msgid "Support"
+msgstr ""
+
+#: templates/index.html:159
+msgid "Prague, Czechia"
+msgstr ""
+
+#: templates/index.html:159
+msgid "Mon–Fri, 09:00–17:00 CET"
+msgstr ""
+
