@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  portfolio\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-24 04:01+0200\n"
+"POT-Creation-Date: 2025-09-24 03:18+0200\n"
 "PO-Revision-Date: 2025-09-22 12:00+0000\n"
 "Last-Translator: YOU <you@example.com>\n"
 "Language: en\n"
@@ -22,23 +22,23 @@ msgstr "Portfolio"
 msgid "Profile"
 msgstr "Profile"
 
-#: templates/index.html:42 templates/index.html:79 templates/index.html:162
+#: templates/index.html:42 templates/index.html:79 templates/index.html:167
 msgid "My projects"
 msgstr "My projects"
 
-#: templates/index.html:43 templates/index.html:81 templates/index.html:212
+#: templates/index.html:43 templates/index.html:81 templates/index.html:215
 msgid "Contacts"
 msgstr "Contacts"
 
-#: templates/index.html:51 templates/index.html:102
+#: templates/index.html:56 templates/index.html:102
 msgid "Ukrainian"
 msgstr "Ukrainian"
 
-#: templates/index.html:52 templates/index.html:103
+#: templates/index.html:56 templates/index.html:103
 msgid "Czech"
 msgstr "Czech"
 
-#: templates/index.html:53 templates/index.html:104
+#: templates/index.html:56 templates/index.html:104
 msgid "English"
 msgstr "English"
 
@@ -50,7 +50,7 @@ msgstr "Toggle theme"
 msgid "Menu"
 msgstr "Menu"
 
-#: templates/index.html:125 templates/index.html:180
+#: templates/index.html:125 templates/index.html:183
 #, python-format
 msgid "%(name)s avatar"
 msgstr "%(name)s avatar"
@@ -78,7 +78,7 @@ msgstr ""
 "embeddings, and tiny agents that reduce repetitive work—and sharing "
 "lightweight write-ups so others can build on top of my findings."
 
-#: templates/index.html:137
+#: templates/index.html:142
 msgid ""
 "Beyond tech, I’m into fishing, long walks with podcasts 🎧, and the "
 "occasional street photography 📷. I’m happiest when a simple script "
@@ -88,23 +88,23 @@ msgstr ""
 "occasional street photography 📷. I’m happiest when a simple script "
 "unlocks real-world value for someone."
 
-#: templates/index.html:143
+#: templates/index.html:148
 msgid "Thanks for stopping by."
 msgstr "Thanks for stopping by."
 
-#: templates/index.html:144
+#: templates/index.html:149
 msgid "Let’s build something useful together."
 msgstr "Let’s build something useful together."
 
-#: templates/index.html:148
+#: templates/index.html:153
 msgid "View projects"
 msgstr "View projects"
 
-#: templates/index.html:150
+#: templates/index.html:155
 msgid "Contact"
 msgstr "Contact"
 
-#: templates/index.html:165
+#: templates/index.html:170
 msgid ""
 "Python / Flask / Django · CRM mini-projects · Simple and practical web "
 "tools · AI-curious"
@@ -112,64 +112,58 @@ msgstr ""
 "Python / Flask / Django · CRM mini-projects · Simple and practical web "
 "tools · AI-curious"
 
-#: templates/index.html:190
+#: templates/index.html:193
 msgid "Fishlog (Django) – demo"
 msgstr "Fishlog (Django) – demo"
 
-#: templates/index.html:193
+#: templates/index.html:196
 msgid "CRM Mini (Flask) – demo/description"
 msgstr "CRM Mini (Flask) – demo/description"
 
-#: templates/index.html:200
+#: templates/index.html:203
 msgid "Simple Web"
 msgstr "Simple Web"
 
-#: templates/index.html:215
+#: templates/index.html:218
 msgid "For collaborations, freelance work, or just to say hi—reach out anytime."
 msgstr "For collaborations, freelance work, or just to say hi—reach out anytime."
 
-#: templates/index.html:225
+#: templates/index.html:226
 msgid "koljaxp+portfolio (at) gmail (dot) com"
 msgstr "koljaxp+portfolio (at) gmail (dot) com"
 
-#: templates/index.html:237
+#: templates/index.html:238
 msgid "Telegram"
 msgstr "Telegram"
 
-#: templates/index.html:247
+#: templates/index.html:248
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: templates/index.html:257
+#: templates/index.html:258
 msgid "GitHub"
 msgstr "GitHub"
 
-#: templates/index.html:266
+#: templates/index.html:267
 msgid "Upwork"
 msgstr "Upwork"
 
-#: templates/index.html:276
+#: templates/index.html:277
 msgid "X / Twitter"
 msgstr "X / Twitter"
 
-#: templates/index.html:286
+#: templates/index.html:287
 msgid "Support"
 msgstr "Support"
 
-#: templates/index.html:292
+#: templates/index.html:293
 msgid "Prague, Czechia"
 msgstr "Prague, Czechia"
 
-#: templates/index.html:292
+#: templates/index.html:293
 msgid "Mon–Fri, 09:00–17:00 CET"
 msgstr "Mon–Fri, 09:00–17:00 CET"
 
 #~ msgid "Present"
 #~ msgstr "Present"
-
-#~ msgid "Ukrainian"
-#~ msgstr "Ukrainian"
-
-#~ msgid "Czech"
-#~ msgstr "Czech"
 

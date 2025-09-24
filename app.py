@@ -2,11 +2,11 @@ from flask import Flask, request, render_template
 from flask_babel import Babel, _, get_locale  # ⬅ додали get_locale
 
 app = Flask(__name__)
-app.config['BABEL_DEFAULT_LOCALE'] = 'uk'
+app.config['BABEL_DEFAULT_LOCALE'] = 'en'
 app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations'
 
 def select_locale():
-    return request.args.get('lang') or 'uk'
+    return request.args.get('lang') or app.config['BABEL_DEFAULT_LOCALE']
 
 babel = Babel(app, locale_selector=select_locale)
 

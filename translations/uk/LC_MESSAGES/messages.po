@@ -6,9 +6,10 @@ msgstr ""
 "POT-Creation-Date: 2025-09-24 04:01+0200\n"
 "PO-Revision-Date: 2025-09-22 12:00+0000\n"
 "Last-Translator: YOU <you@example.com>\n"
-"Language: cs\n"
-"Language-Team: Čeština\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Language: uk\n"
+"Language-Team: Українська\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,49 +17,49 @@ msgstr ""
 
 #: templates/index.html:6
 msgid "Portfolio"
-msgstr "Portfolio"
+msgstr "Портфоліо"
 
 #: templates/index.html:41 templates/index.html:77
 msgid "Profile"
-msgstr "Profil"
+msgstr "Профіль"
 
 #: templates/index.html:42 templates/index.html:79 templates/index.html:162
 msgid "My projects"
-msgstr "Moje projekty"
+msgstr "Мої проєкти"
 
 #: templates/index.html:43 templates/index.html:81 templates/index.html:212
 msgid "Contacts"
-msgstr "Kontakty"
+msgstr "Контакти"
 
 #: templates/index.html:51 templates/index.html:102
 msgid "Ukrainian"
-msgstr "Ukrajinština"
+msgstr "Українська"
 
 #: templates/index.html:52 templates/index.html:103
 msgid "Czech"
-msgstr "Čeština"
+msgstr "Чеська"
 
 #: templates/index.html:53 templates/index.html:104
 msgid "English"
-msgstr "Angličtina"
+msgstr "Англійська"
 
 #: templates/index.html:61 templates/index.html:92
 msgid "Toggle theme"
-msgstr "Přepnout téma"
+msgstr "Перемкнути тему"
 
 #: templates/index.html:75
 msgid "Menu"
-msgstr "Menu"
+msgstr "Меню"
 
 #: templates/index.html:125 templates/index.html:180
 #, python-format
 msgid "%(name)s avatar"
-msgstr "Avatar uživatele %(name)s"
+msgstr "Аватар %(name)s"
 
 #: templates/index.html:128
 #, python-format
 msgid "Hi, my name is %(name)s"
-msgstr "Ahoj, jmenuji se %(name)s"
+msgstr "Привіт, мене звати Микола Шишка"
 
 #: templates/index.html:131
 msgid ""
@@ -70,13 +71,14 @@ msgid ""
 "embeddings, and tiny agents that reduce repetitive work—and sharing "
 "lightweight write-ups so others can build on top of my findings."
 msgstr ""
-"Jsem pražský 🇨🇿 absolvent informatiky 🎓, který vytváří štíhlé webové "
-"aplikace a prototypy: Python na backendu 👨‍💻 (Flask/Django), HTML/CSS/JS "
-"na frontendu a rostoucí sadu nástrojů pro automatizaci a práci s daty 🤖📊."
-" Zajímá mě čitelný kód, malé iterace a design, který nepřekáží ✨. V "
-"poslední době se věnuji aplikované umělé inteligenci – klasifikaci, "
-"embeddingům a malým agentům, kteří snižují opakující se práci – a sdílím "
-"jednoduché články, aby ostatní mohli stavět na mých poznatcích."
+"Я базуюся в Празі 🇨🇿, маю ступінь з комп’ютерних наук 🎓 і створюю легкі "
+"веб-додатки та прототипи: Python на бекенді 👨‍💻 (Flask/Django), "
+"HTML/CSS/JS на фронтенді, а також зростаючий набір інструментів для "
+"автоматизації та роботи з даними 🤖📊. Мені важливі читабельний код, "
+"невеликі ітерації та дизайн, який не заважає ✨. Останнім часом досліджую "
+"прикладний ШІ — класифікацію, ембеддинги та невеликі агенти, що зменшують"
+" рутину, — і ділюся короткими нотатками, аби інші могли будувати далі на "
+"моїх висновках."
 
 #: templates/index.html:137
 msgid ""
@@ -84,53 +86,53 @@ msgid ""
 "occasional street photography 📷. I’m happiest when a simple script "
 "unlocks real-world value for someone."
 msgstr ""
-"Kromě technologií se věnuji rybaření, dlouhým procházkám s podcasty 🎧 a "
-"občasné pouliční fotografii 📷. Nejvíc mě těší, když jednoduchý skript "
-"někomu přinese skutečnou hodnotu."
+"Окрім технологій, люблю риболовлю, довгі прогулянки з подкастами 🎧 та "
+"інколи вуличну фотографію 📷. Найбільше тішуся, коли простий скрипт "
+"приносить комусь реальну користь."
 
 #: templates/index.html:143
 msgid "Thanks for stopping by."
-msgstr "Děkuji, že jste se zastavili."
+msgstr "Дякую, що завітали."
 
 #: templates/index.html:144
 msgid "Let’s build something useful together."
-msgstr "Pojďme společně vytvořit něco užitečného."
+msgstr "Створімо разом щось корисне."
 
 #: templates/index.html:148
 msgid "View projects"
-msgstr "Zobrazit projekty"
+msgstr "Переглянути проєкти"
 
 #: templates/index.html:150
 msgid "Contact"
-msgstr "Kontakt"
+msgstr "Зв’язатися"
 
 #: templates/index.html:165
 msgid ""
 "Python / Flask / Django · CRM mini-projects · Simple and practical web "
 "tools · AI-curious"
 msgstr ""
-"Python / Flask / Django · CRM mini-projekty · Jednoduché a praktické "
-"webové nástroje · zájem o AI"
+"Python / Flask / Django · міні-проєкти CRM · прості та практичні "
+"веб-інструменти · цікавість до ШІ"
 
 #: templates/index.html:190
 msgid "Fishlog (Django) – demo"
-msgstr "Fishlog (Django) – ukázka"
+msgstr "Fishlog (Django) – демо"
 
 #: templates/index.html:193
 msgid "CRM Mini (Flask) – demo/description"
-msgstr "CRM Mini (Flask) – ukázka/popis"
+msgstr "CRM Mini (Flask) – демо/опис"
 
 #: templates/index.html:200
 msgid "Simple Web"
-msgstr "Jednoduchý web"
+msgstr "Простий веб"
 
 #: templates/index.html:215
 msgid "For collaborations, freelance work, or just to say hi—reach out anytime."
-msgstr "Pro spolupráci, zakázky na volné noze nebo jen pro pozdrav – kontaktujt"
+msgstr "Для співпраці, фрилансу чи просто привітатися — пишіть у будь-який час."
 
 #: templates/index.html:225
 msgid "koljaxp+portfolio (at) gmail (dot) com"
-msgstr "koljaxp+portfolio (zavináč) gmail (tečka) com"
+msgstr "koljaxp+portfolio (at) gmail (dot) com"
 
 #: templates/index.html:237
 msgid "Telegram"
@@ -154,19 +156,19 @@ msgstr "X / Twitter"
 
 #: templates/index.html:286
 msgid "Support"
-msgstr "Podpořit"
+msgstr "Підтримати"
 
 #: templates/index.html:292
 msgid "Prague, Czechia"
-msgstr "Praha, Česko"
+msgstr "Прага, Чехія"
 
 #: templates/index.html:292
 msgid "Mon–Fri, 09:00–17:00 CET"
-msgstr "Po–Pá, 09:00–17:00 SEČ"
+msgstr "Пн–Пт, 09:00–17:00 CET"
 
 #~ msgid "Ukrainian"
-#~ msgstr "Ukrajinština"
+#~ msgstr "Українська"
 
 #~ msgid "Czech"
-#~ msgstr "Čeština"
+#~ msgstr "Чеська"
 

@@ -25,6 +25,7 @@ p {
   font-family: "Michroma", sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 1.5rem;
 }
 
 
@@ -129,6 +130,21 @@ nav {
 
 html[data-theme="dark"] .sticky-bar a[data-nav].is-active { background: rgba(255,255,255,.12); }
 
+.lang-switch { position: relative; }
+.lang-btn { min-width: 84px; } /* щоб напис не стрибав */
+.lang-menu {
+  position: absolute; right: 0; top: calc(100% + 6px);
+  list-style: none; margin: 0; padding: .25rem 0;
+  background: var(--pico-card-background-color,#fff);
+  border: 1px solid var(--pico-muted-border-color,#ddd);
+  border-radius: 10px; min-width: 160px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  display: none; z-index: 1000;
+}
+.lang-menu.show { display: block; }
+.lang-menu a { display:block; padding:.45rem .75rem; text-decoration:none; cursor:pointer; }
+.lang-menu a:hover, .lang-menu a:focus { background: rgba(0,0,0,.06); }
+.lang-menu a.is-active { font-weight: 600; }
 
 /* Hero */
 .hello {
@@ -150,6 +166,11 @@ html[data-theme="dark"] .sticky-bar a[data-nav].is-active { background: rgba(255
   max-width: 780px;
   margin-inline: auto;
   padding-top: 0;
+}
+.myinfo {
+  text-align: justify;
+  
+
 }
 
 .avatar {
@@ -219,10 +240,12 @@ html[data-theme="dark"] .sticky-bar a[data-nav].is-active { background: rgba(255
 }
 
 .contact-buttons {
+  font-size: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: .6rem;
-  justify-content: center;
+  justify-content: left;
+  text-decoration: none;
 }
 
 .contact-meta {
@@ -239,6 +262,13 @@ html[data-theme="dark"] .contact-meta { color: rgba(255,255,255,.75); }
   object-fit: cover;
   border: 3px solid rgba(14, 52, 190, 0.1);
   margin-bottom: .8rem;
+}
+
+.email-link {
+  text-decoration: underline;
+  font-style: italic;
+  font-size: 1.1rem;
+
 }
 
 /* Optional: section snap feeling (page-by-page scroll) */
@@ -269,7 +299,7 @@ html[data-theme="dark"] .contact-meta { color: rgba(255,255,255,.75); }
 }
 
 /* Mobile tweaks */
-@media (min-width: 515px) and (max-width: 768px) {
+@media (min-width: 593px) and (max-width: 768px) {
   .cta {
     flex-wrap: wrap;
   }
@@ -301,12 +331,22 @@ html[data-theme="dark"] .contact-meta { color: rgba(255,255,255,.75); }
   }
 }
 
-@media (max-width: 515px) {
+@media (max-width: 593px) {
   .desktop {
     display: none;
   }
 
   .mobile {
     display: block;
+  }
+
+  .cta {
+    flex-wrap: wrap;
+  }
+  .sticky-bar {
+    margin-inline: auto;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
