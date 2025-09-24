@@ -86,7 +86,7 @@ nav {
   backdrop-filter: none;
   /* blur(8px); */
   background: var(--pico-card-background-color, #fff);
-  padding-top: .4rem;
+  /*padding-top: .4rem;*/
   border: 2px solid transparent;
   /* прозорий бордер */
   border-image: linear-gradient(90deg, #2bdd2255 0%, #a89a3e4b 100%) 1;
@@ -174,11 +174,11 @@ html[data-theme="dark"] .sticky-bar a[data-nav].is-active { background: rgba(255
 }
 
 .avatar {
-  width: 240px;
-  height: 240px;
-  border-radius: 47%;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
   object-fit: cover;
-  border: 3px solid rgba(14, 52, 190, 0.1);
+  border: 2px solid black;
   margin-bottom: .8rem;
 }
 
