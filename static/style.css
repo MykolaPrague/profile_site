@@ -1,4 +1,6 @@
 /* Base */
+html.no-smooth { scroll-behavior: auto !important; }
+
 html {
   scroll-behavior: smooth;
 }
@@ -234,10 +236,7 @@ html[data-theme="dark"] .sticky-bar a[data-nav].is-active { background: rgba(255
   padding-left: 1.2rem;
 }
 
-.contact-email {
-  font-size: 1.1rem;
-  margin: .5rem 0 1rem;
-}
+
 
 .contact-buttons {
   font-size: 1.5rem;
@@ -264,12 +263,52 @@ html[data-theme="dark"] .contact-meta { color: rgba(255,255,255,.75); }
   margin-bottom: .8rem;
 }
 
-.email-link {
-  text-decoration: underline;
-  font-style: italic;
-  font-size: 1.1rem;
+/* Сховати honeypot доступно для скрінрідерів */
+.hp {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px; height: 1px; overflow: hidden;
+}
+
+#flash-zone{
+  position: fixed;      /* плаваючий “тост” */
+  top: 5rem;
+  right: 1.8rem;
+  z-index: 1000;
+  max-width: 360px;
+
 
 }
+
+.flash-msg{
+  margin: 0 0 0.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: .5rem;
+  animation: slideIn .25s ease-out;
+  border: 3px solid rgb(182, 11, 11);
+}
+.flash-msg .close{
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: .7;
+}
+.flash-msg.hide{
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+@keyframes slideIn{
+  from{ transform: translateY(-8px); opacity: 0; }
+  to  { transform: translateY(0);    opacity: 1; }
+}
+
+
+
 
 /* Optional: section snap feeling (page-by-page scroll) */
 @media (min-width: 640px) {

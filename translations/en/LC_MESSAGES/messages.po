@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  portfolio\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-24 04:01+0200\n"
+"POT-Creation-Date: 2025-09-25 19:12+0200\n"
 "PO-Revision-Date: 2025-09-22 12:00+0000\n"
 "Last-Translator: YOU <you@example.com>\n"
 "Language: en\n"
@@ -12,55 +12,67 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: app.py:79
+msgid "Thanks! Your message has been sent."
+msgstr "Thanks! Your message has been sent."
 
 #: templates/index.html:6
 msgid "Portfolio"
 msgstr "Portfolio"
 
-#: templates/index.html:41 templates/index.html:77
+#: templates/index.html:41 templates/index.html:89
 msgid "Profile"
 msgstr "Profile"
 
-#: templates/index.html:42 templates/index.html:79 templates/index.html:162
+#: templates/index.html:42 templates/index.html:91 templates/index.html:191
 msgid "My projects"
 msgstr "My projects"
 
-#: templates/index.html:43 templates/index.html:81 templates/index.html:212
+#: templates/index.html:43 templates/index.html:93 templates/index.html:240
 msgid "Contacts"
 msgstr "Contacts"
 
-#: templates/index.html:51 templates/index.html:102
+#: templates/index.html:58
 msgid "Ukrainian"
 msgstr "Ukrainian"
 
-#: templates/index.html:52 templates/index.html:103
+#: templates/index.html:61
 msgid "Czech"
 msgstr "Czech"
 
-#: templates/index.html:53 templates/index.html:104
+#: templates/index.html:64 templates/index.html:127
 msgid "English"
 msgstr "English"
 
-#: templates/index.html:61 templates/index.html:92
+#: templates/index.html:73 templates/index.html:104
 msgid "Toggle theme"
 msgstr "Toggle theme"
 
-#: templates/index.html:75
+#: templates/index.html:87
 msgid "Menu"
 msgstr "Menu"
 
-#: templates/index.html:125 templates/index.html:180
+#: templates/index.html:121
+msgid "Українська"
+msgstr ""
+
+#: templates/index.html:124
+msgid "Čeština"
+msgstr ""
+
+#: templates/index.html:148 templates/index.html:208
 #, python-format
 msgid "%(name)s avatar"
 msgstr "%(name)s avatar"
 
-#: templates/index.html:128
+#: templates/index.html:151
 #, python-format
 msgid "Hi, my name is %(name)s"
 msgstr "Hi, my name is %(name)s"
 
-#: templates/index.html:131
+#: templates/index.html:154
 msgid ""
 "I’m a Prague-based Computer Science graduate 🎓 building lean web apps and"
 " prototypes: Python on the backend 👨‍💻 (Flask/Django), HTML/CSS/JS on the"
@@ -78,7 +90,7 @@ msgstr ""
 "embeddings, and tiny agents that reduce repetitive work—and sharing "
 "lightweight write-ups so others can build on top of my findings."
 
-#: templates/index.html:137
+#: templates/index.html:165
 msgid ""
 "Beyond tech, I’m into fishing, long walks with podcasts 🎧, and the "
 "occasional street photography 📷. I’m happiest when a simple script "
@@ -88,23 +100,23 @@ msgstr ""
 "occasional street photography 📷. I’m happiest when a simple script "
 "unlocks real-world value for someone."
 
-#: templates/index.html:143
+#: templates/index.html:172
 msgid "Thanks for stopping by."
 msgstr "Thanks for stopping by."
 
-#: templates/index.html:144
+#: templates/index.html:173
 msgid "Let’s build something useful together."
 msgstr "Let’s build something useful together."
 
-#: templates/index.html:148
+#: templates/index.html:177
 msgid "View projects"
 msgstr "View projects"
 
-#: templates/index.html:150
+#: templates/index.html:179 templates/index.html:321
 msgid "Contact"
 msgstr "Contact"
 
-#: templates/index.html:165
+#: templates/index.html:194
 msgid ""
 "Python / Flask / Django · CRM mini-projects · Simple and practical web "
 "tools · AI-curious"
@@ -112,64 +124,71 @@ msgstr ""
 "Python / Flask / Django · CRM mini-projects · Simple and practical web "
 "tools · AI-curious"
 
-#: templates/index.html:190
+#: templates/index.html:218
 msgid "Fishlog (Django) – demo"
 msgstr "Fishlog (Django) – demo"
 
-#: templates/index.html:193
+#: templates/index.html:221
 msgid "CRM Mini (Flask) – demo/description"
 msgstr "CRM Mini (Flask) – demo/description"
 
-#: templates/index.html:200
+#: templates/index.html:228
 msgid "Simple Web"
 msgstr "Simple Web"
 
-#: templates/index.html:215
+#: templates/index.html:243
 msgid "For collaborations, freelance work, or just to say hi—reach out anytime."
 msgstr "For collaborations, freelance work, or just to say hi—reach out anytime."
 
-#: templates/index.html:225
-msgid "koljaxp+portfolio (at) gmail (dot) com"
-msgstr "koljaxp+portfolio (at) gmail (dot) com"
-
-#: templates/index.html:237
+#: templates/index.html:254
 msgid "Telegram"
 msgstr "Telegram"
 
-#: templates/index.html:247
+#: templates/index.html:264
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: templates/index.html:257
+#: templates/index.html:274
 msgid "GitHub"
 msgstr "GitHub"
 
-#: templates/index.html:266
+#: templates/index.html:283
 msgid "Upwork"
 msgstr "Upwork"
 
-#: templates/index.html:276
+#: templates/index.html:293
 msgid "X / Twitter"
 msgstr "X / Twitter"
 
-#: templates/index.html:286
+#: templates/index.html:303
 msgid "Support"
 msgstr "Support"
 
-#: templates/index.html:292
+#: templates/index.html:323
+msgid "Name"
+msgstr "Name"
+
+#: templates/index.html:326
+msgid "Email"
+msgstr "Email"
+
+#: templates/index.html:329
+msgid "Message"
+msgstr "Message"
+
+#: templates/index.html:333
+msgid "Your website (leave empty)"
+msgstr "Your website (leave empty)"
+
+#: templates/index.html:336
+msgid "Send"
+msgstr "Send"
+
+#: templates/index.html:341
 msgid "Prague, Czechia"
 msgstr "Prague, Czechia"
 
-#: templates/index.html:292
+#: templates/index.html:341
 msgid "Mon–Fri, 09:00–17:00 CET"
 msgstr "Mon–Fri, 09:00–17:00 CET"
-
-#~ msgid "Present"
-#~ msgstr "Present"
-
-#~ msgid "Ukrainian"
-#~ msgstr "Ukrainian"
-
-#~ msgid "Czech"
-#~ msgstr "Czech"
 

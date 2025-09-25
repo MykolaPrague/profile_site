@@ -44,13 +44,25 @@
           </ul>
           <ul class="nav-right">
             <li class="lang-switch">
-              <button class="lang-btn contrast outline" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
+              <button
+                class="lang-btn contrast outline"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-label="Change language"
+              >
                 <span class="lang-current">EN</span> ▾
               </button>
               <ul class="lang-menu" role="menu" aria-label="Languages">
-                <li role="none"><a role="menuitem" data-lang="uk">{{ _("Ukrainian") }}</a></li>
-                <li role="none"><a role="menuitem" data-lang="cs">{{ _("Czech") }}</a></li>
-                <li role="none"><a role="menuitem" data-lang="en">{{ _("English") }}</a></li>
+                <li role="none">
+                  <a role="menuitem" data-lang="uk">{{ _("Ukrainian") }}</a>
+                </li>
+                <li role="none">
+                  <a role="menuitem" data-lang="cs">{{ _("Czech") }}</a>
+                </li>
+                <li role="none">
+                  <a role="menuitem" data-lang="en">{{ _("English") }}</a>
+                </li>
               </ul>
             </li>
             <li>
@@ -94,21 +106,32 @@
                 🌙/☀️
               </button>
             </li>
-              <li class="lang-switch">
-                <button class="lang-btn contrast outline" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
-                  <span class="lang-current">EN</span> ▾
-                </button>
-                <ul class="lang-menu" role="menu" aria-label="Languages">
-                  <li role="none"><a role="menuitem" data-lang="uk">{{ _("Українська") }}</a></li>
-                  <li role="none"><a role="menuitem" data-lang="cs">{{ _("Čeština") }}</a></li>
-                  <li role="none"><a role="menuitem" data-lang="en">{{ _("English") }}</a></li>
-                </ul>
-              </li>
+            <li class="lang-switch">
+              <button
+                class="lang-btn contrast outline"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-label="Change language"
+              >
+                <span class="lang-current">EN</span> ▾
+              </button>
+              <ul class="lang-menu" role="menu" aria-label="Languages">
+                <li role="none">
+                  <a role="menuitem" data-lang="uk">{{ _("Українська") }}</a>
+                </li>
+                <li role="none">
+                  <a role="menuitem" data-lang="cs">{{ _("Čeština") }}</a>
+                </li>
+                <li role="none">
+                  <a role="menuitem" data-lang="en">{{ _("English") }}</a>
+                </li>
+              </ul>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
-
     <main id="main" class="container">
       <!-- HERO / PRESENT -->
       <section
@@ -128,15 +151,21 @@
           <h3>{{ _("Hi, my name is %(name)s", name=name) }}</h3>
 
           <p class="myinfo">
-          {%- trans trimmed -%}
-          I’m a Prague-based Computer Science graduate 🎓 building lean web apps and prototypes: Python on the backend 👨‍💻 (Flask/Django), HTML/CSS/JS on the frontend, and a growing toolkit of automation and data utilities 🤖📊. I care about readable code, small iterations, and design that stays out of the way ✨. Lately I’ve been exploring applied AI—classification, embeddings, and tiny agents that reduce repetitive work—and sharing lightweight write-ups so others can build on top of my findings.
-          {%- endtrans -%}
+            {%- trans trimmed -%} I’m a Prague-based Computer Science graduate
+            🎓 building lean web apps and prototypes: Python on the backend 👨‍💻
+            (Flask/Django), HTML/CSS/JS on the frontend, and a growing toolkit
+            of automation and data utilities 🤖📊. I care about readable code,
+            small iterations, and design that stays out of the way ✨. Lately
+            I’ve been exploring applied AI—classification, embeddings, and tiny
+            agents that reduce repetitive work—and sharing lightweight write-ups
+            so others can build on top of my findings. {%- endtrans -%}
           </p>
 
           <p>
-          {%- trans trimmed -%}
-          Beyond tech, I’m into fishing, long walks with podcasts 🎧, and the occasional street photography 📷. I’m happiest when a simple script unlocks real-world value for someone.
-          {%- endtrans -%}
+            {%- trans trimmed -%} Beyond tech, I’m into fishing, long walks with
+            podcasts 🎧, and the occasional street photography 📷. I’m happiest
+            when a simple script unlocks real-world value for someone. {%-
+            endtrans -%}
           </p>
 
           <p>
@@ -162,9 +191,8 @@
         <h2 id="projects-title">{{ _("My projects") }}</h2>
 
         <p class="tagline">
-        {%- trans trimmed -%}
-        Python / Flask / Django · CRM mini-projects · Simple and practical web tools · AI-curious
-        {%- endtrans -%}
+          {%- trans trimmed -%} Python / Flask / Django · CRM mini-projects ·
+          Simple and practical web tools · AI-curious {%- endtrans -%}
         </p>
 
         <ul>
@@ -212,20 +240,9 @@
         <h2 id="contact-title">{{ _("Contacts") }}</h2>
 
         <p>
-        {%- trans trimmed -%}
-        For collaborations, freelance work, or just to say hi—reach out anytime.
-        {%- endtrans -%}
+          {%- trans trimmed -%} For collaborations, freelance work, or just to
+          say hi—reach out anytime. {%- endtrans -%}
         </p>
-
-        <p class="contact-email">
-          📧
-          <a class="email-link"
-            href="mailto:koljaxp+portfolio@gmail.com?subject=Hello%20from%20your%20portfolio&body=Hi%2C%20I%27d%20like%20to%20talk%20about..."
-          >
-            {{ _("koljaxp+portfolio (at) gmail (dot) com") }}
-          </a>
-        </p>
-
         <div class="contact-buttons">
           <ul>
             <li>
@@ -288,6 +305,38 @@
             </li>
           </ul>
         </div>
+        <div id="flash-zone">
+          {% with messages = get_flashed_messages(with_categories=true) %} {%
+          for category, text in messages %}
+          <article
+            class="{{ 'success' if category=='success' else 'secondary' }} flash-msg"
+            role="alert"
+          >
+            {{ text }}
+            <button class="close" aria-label="Close">&times;</button>
+          </article>
+          {% endfor %} {% endwith %}
+        </div>
+        <section id="contact" class="container">
+          <h2>{{ _("Contact") }}</h2>
+          <form action="/contact" method="post">
+            <label>{{ _("Name") }}<input type="text" name="name" required />
+            </label>
+
+            <label>{{ _("Email") }}<input type="email" name="email" required />
+            </label>
+
+            <label>{{ _("Message") }}<textarea name="message" rows="5" required></textarea>
+            </label>
+
+            <!-- Honeypot: приховане поле, люди не заповнюють, боти часто — так -->
+            <label class="hp" aria-hidden="true" tabindex="-1">{{ _("Your website (leave empty)") }}<input type="text" name="website" autocomplete="off" />
+            </label>
+
+            <button type="submit" class="contrast">{{ _("Send") }}</button>
+          </form>
+        </section>
+
         <p class="contact-meta">
           📍 {{ _("Prague, Czechia") }} · ⏱️ {{ _("Mon–Fri, 09:00–17:00 CET") }}
         </p>
@@ -316,76 +365,93 @@
       );
       document.querySelectorAll("section[id]").forEach((s) => io.observe(s));
 
-            // === Language Switch ===
+      // === Language Switch ===
       (function () {
-        const mapLabel = { uk: 'UK', cs: 'CS', en: 'EN' };
+        const mapLabel = { uk: "UK", cs: "CS", en: "EN" };
 
         // поточна мова: краще з серверу, інакше з URL
-        const currentLang = (function(){
-          try { return "{{ current_locale or '' }}"; } catch(e) { /* not templated */ }
-          const p = new URLSearchParams(location.search);
-          return p.get('lang') || 'en';
-        })() || 'en';
+        const currentLang =
+          (function () {
+            try {
+              return "{{ current_locale or '' }}";
+            } catch (e) {
+              /* not templated */
+            }
+            const p = new URLSearchParams(location.search);
+            return p.get("lang") || "en";
+          })() || "en";
 
         // Закрити всі відкриті меню
         function closeAll() {
-          document.querySelectorAll('.lang-menu.show').forEach(m => m.classList.remove('show'));
-          document.querySelectorAll('.lang-btn[aria-expanded="true"]').forEach(b => b.setAttribute('aria-expanded','false'));
+          document
+            .querySelectorAll(".lang-menu.show")
+            .forEach((m) => m.classList.remove("show"));
+          document
+            .querySelectorAll('.lang-btn[aria-expanded="true"]')
+            .forEach((b) => b.setAttribute("aria-expanded", "false"));
         }
 
         // Ініціалізуємо кожний .lang-switch окремо
-        document.querySelectorAll('.lang-switch').forEach(sw => {
-          const btn   = sw.querySelector('.lang-btn');
-          const menu  = sw.querySelector('.lang-menu');
-          const curEl = sw.querySelector('.lang-current');
+        document.querySelectorAll(".lang-switch").forEach((sw) => {
+          const btn = sw.querySelector(".lang-btn");
+          const menu = sw.querySelector(".lang-menu");
+          const curEl = sw.querySelector(".lang-current");
 
           if (!btn || !menu || !curEl) return;
 
           // показуємо поточну мову на кнопці
-          curEl.textContent = mapLabel[currentLang] || currentLang.toUpperCase();
+          curEl.textContent =
+            mapLabel[currentLang] || currentLang.toUpperCase();
 
           // підсвітити активну мову в меню
-          menu.querySelectorAll('[data-lang]').forEach(a => {
-            if (a.getAttribute('data-lang') === currentLang) a.classList.add('is-active');
+          menu.querySelectorAll("[data-lang]").forEach((a) => {
+            if (a.getAttribute("data-lang") === currentLang)
+              a.classList.add("is-active");
           });
 
           // відкриття/закриття конкретного меню
           function toggleMenu(show) {
-            const willShow = (typeof show === 'boolean') ? show : !menu.classList.contains('show');
+            const willShow =
+              typeof show === "boolean"
+                ? show
+                : !menu.classList.contains("show");
             closeAll(); // один відкритий за раз
             if (willShow) {
-              menu.classList.add('show');
-              btn.setAttribute('aria-expanded','true');
-              (menu.querySelector('.is-active') || menu.querySelector('[data-lang]'))?.focus();
+              menu.classList.add("show");
+              btn.setAttribute("aria-expanded", "true");
+              (
+                menu.querySelector(".is-active") ||
+                menu.querySelector("[data-lang]")
+              )?.focus();
             } else {
-              menu.classList.remove('show');
-              btn.setAttribute('aria-expanded','false');
+              menu.classList.remove("show");
+              btn.setAttribute("aria-expanded", "false");
             }
           }
 
-          btn.addEventListener('click', (e) => {
+          btn.addEventListener("click", (e) => {
             e.preventDefault();
             toggleMenu();
           });
 
           // вибір мови
-          menu.querySelectorAll('[data-lang]').forEach(a => {
-            a.addEventListener('click', (e) => {
+          menu.querySelectorAll("[data-lang]").forEach((a) => {
+            a.addEventListener("click", (e) => {
               e.preventDefault();
-              const lang = a.getAttribute('data-lang');
+              const lang = a.getAttribute("data-lang");
               const url = new URL(location.href);
-              url.searchParams.set('lang', lang); // збережемо інші параметри та hash
+              url.searchParams.set("lang", lang); // збережемо інші параметри та hash
               location.href = url.toString();
             });
           });
         });
 
         // глобально: клік поза меню/ESC — закрити
-        document.addEventListener('click', (e) => {
-          if (!e.target.closest('.lang-switch')) closeAll();
+        document.addEventListener("click", (e) => {
+          if (!e.target.closest(".lang-switch")) closeAll();
         });
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape') closeAll();
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeAll();
         });
       })();
       // Theme toggle (persisted)
@@ -404,6 +470,43 @@
           .querySelectorAll('[id="themeToggle"]')
           .forEach((b) => b.addEventListener("click", toggleTheme));
       })();
+      // автозникання через 4с
+      setTimeout(() => {
+        document.querySelectorAll(".flash-msg").forEach((el) => {
+          el.classList.add("hide");
+          setTimeout(() => el.remove(), 400);
+        });
+      }, 10000);
+
+      // ручне закриття
+      document.querySelectorAll(".flash-msg .close").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          const box = e.currentTarget.closest(".flash-msg");
+          box.classList.add("hide");
+          setTimeout(() => box.remove(), 350);
+        });
+      });
+
+      // підстрахуємо скрол до секції #contact (іноді браузер не прокручує миттєво)
+      if (location.hash === "#contact") {
+        const el = document.getElementById("contact");
+        if (el)
+          setTimeout(
+            () => el.scrollIntoView({ behavior: "smooth", block: "start" }),
+            50
+          );
+      }
+        // якщо прийшли саме на #contact — вимкнемо плавність на один кадр і стрибнемо миттєво
+      if (location.hash === '#contact') {
+        document.documentElement.classList.add('no-smooth');
+        const el = document.getElementById('contact');
+        if (el) {
+          // миттєво
+          el.scrollIntoView({ behavior: 'auto', block: 'start' });
+        }
+        // повертаємо плавність
+        setTimeout(() => document.documentElement.classList.remove('no-smooth'), 50);
+      }
     </script>
   </body>
 </html>
