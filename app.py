@@ -1,13 +1,11 @@
 import os
-import smtplib
-from email.message import EmailMessage
-
 from flask import (
     Flask, request, render_template, abort,
     redirect, url_for, flash, session, g
 )
 from flask_babel import Babel, _, get_locale
 from dotenv import load_dotenv, find_dotenv
+import requests  # потрібен для SendGrid
 
 # -------------------- ENV --------------------
 load_dotenv(find_dotenv())
@@ -21,12 +19,9 @@ app.config['BABEL_DEFAULT_LOCALE'] = 'en'
 app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations'
 app.config['LANGUAGES'] = ['en', 'cs', 'uk']
 
-# -------------------- SMTP --------------------
-SMTP_HOST = os.getenv("SMTP_HOST", "smtp.gmail.com")
-SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
-SMTP_USER = os.getenv("SMTP_USER")
-SMTP_PASS = os.getenv("SMTP_PASS")
-MAIL_TO   = os.getenv("MAIL_TO", SMTP_USER)
+# -------------------- SENDGRID --------------------
+SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
+MAIL_TO = os.getenv("MAIL_TO")  # куди надсилати листи з форми
 
 # -------------------- LOCALE --------------------
 def _norm_lang(lang: str | None) -> str | None:
@@ -55,25 +50,22 @@ def _select_locale():
     g.current_locale = best
     return best
 
-# Create Babel and register locale selector in a way that works across versions
+# Працює як із Babel 4.x, так і зі старішими
 babel = Babel()
-# Try Babel 4.x style (init_app with keyword)
 try:
+    # Babel 4.x
     babel.init_app(app, locale_selector=_select_locale)
 except TypeError:
-    # Probably 2.x/3.x: init first, then try to register via attribute
+    # 2.x/3.x
     babel.init_app(app)
-    # Try new attribute name (4.x) — callable form
     if hasattr(babel, "locale_selector"):
         try:
-            babel.locale_selector(_select_locale)  # type: ignore[attr-defined]
+            babel.locale_selector(_select_locale)  # callable форма
         except TypeError:
-            # Some builds expose it only as a decorator, ignore
             pass
-    # Try old 2.x decorator-style registrar
     if hasattr(babel, "localeselector"):
         try:
-            babel.localeselector(_select_locale)  # type: ignore[attr-defined]
+            babel.localeselector(_select_locale)
         except TypeError:
             pass
 
@@ -88,11 +80,13 @@ def index():
 
 @app.post("/contact")
 def contact():
+    # Поля форми
     name = (request.form.get("name") or "").strip()
     email = (request.form.get("email") or "").strip()
     msg = (request.form.get("message") or "").strip()
-    website_hp = (request.form.get("website") or "").strip()
+    website_hp = (request.form.get("website") or "").strip()  # honeypot
 
+    # Мова для редіректу
     lang = _norm_lang(
         request.args.get("lang")
         or request.form.get("lang")
@@ -100,6 +94,7 @@ def contact():
         or str(get_locale())
     ) or 'en'
 
+    # Проста валідація
     if website_hp:
         abort(400, "Bot detected")
     if not name or not email or not msg:
@@ -110,33 +105,53 @@ def contact():
     subject = f"Portfolio contact: {name}"
     text = f"From: {name} <{email}>\n\n{msg}"
 
-    if not SMTP_USER or not SMTP_PASS:
-        app.logger.error("SMTP credentials missing; set SMTP_USER/SMTP_PASS")
-        abort(500, "Mail server not configured")
+    # Перевірки конфігурації відправки
+    if not SENDGRID_API_KEY:
+        app.logger.error("SENDGRID_API_KEY is missing")
+        abort(500, "Mail service not configured")
+    if not MAIL_TO:
+        app.logger.error("MAIL_TO is missing")
+        abort(500, "Mail recipient not configured")
 
+    # Надсилання через SendGrid
     try:
-        send_via_smtp(MAIL_TO, subject, text, reply_email=email, reply_name=name)
-    except Exception:
+        send_via_sendgrid(SENDGRID_API_KEY, MAIL_TO, subject, text, reply_email=email, reply_name=name)
+    except Exception as e:
         app.logger.exception("Mail send failed")
         abort(500, "Mail send failed")
 
     flash(_("Thanks! Your message has been sent."), "success")
     return redirect(url_for("index", _anchor="contact", lang=lang))
 
-# -------------------- SMTP SENDER --------------------
-def send_via_smtp(to_addr, subject, text, reply_email=None, reply_name=None):
-    msg = EmailMessage()
-    msg["From"] = SMTP_USER
-    msg["To"] = to_addr
-    msg["Subject"] = subject
-    if reply_email:
-        msg["Reply-To"] = f"{reply_name} <{reply_email}>" if reply_name else reply_email
-    msg.set_content(text)
-
-    with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as s:
-        s.starttls()
-        s.login(SMTP_USER, SMTP_PASS)
-        s.send_message(msg)
+# -------------------- SENDGRID SENDER --------------------
+def send_via_sendgrid(api_key: str, to_addr: str, subject: str, text: str, reply_email: str, reply_name: str):
+    """
+    Відправка листа через SendGrid API v3.
+    """
+    import json
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
+    }
+    data = {
+        "personalizations": [
+            {"to": [{"email": to_addr}]}
+        ],
+        # 'from' краще вказувати так само як і MAIL_TO (Single Sender)
+        "from": {"email": to_addr, "name": "Portfolio Form"},
+        "reply_to": {"email": reply_email, "name": reply_name},
+        "subject": subject,
+        "content": [{"type": "text/plain", "value": text}],
+    }
+    r = requests.post(
+        "https://api.sendgrid.com/v3/mail/send",
+        headers=headers,
+        data=json.dumps(data),
+        timeout=15,
+    )
+    # Якщо SendGrid повертає 202 — це успіх; інші коди — помилка
+    if r.status_code != 202:
+        raise RuntimeError(f"SendGrid error {r.status_code}: {r.text}")
 
 # -------------------- DEV --------------------
 if __name__ == "__main__":
