@@ -317,9 +317,10 @@
           </article>
           {% endfor %} {% endwith %}
         </div>
-        <section id="contact" class="container">
+        <section id="contact-form-section" class="container">
           <h2>{{ _("Contact") }}</h2>
-          <form action="/contact" method="post">
+          <form action="/contact?lang={{ current_locale }}" method="post">
+            <input type="hidden" name="lang" value="{{ current_locale }}">
             <label>{{ _("Name") }}<input type="text" name="name" required />
             </label>
 
@@ -332,7 +333,6 @@
             <!-- Honeypot: приховане поле, люди не заповнюють, боти часто — так -->
             <label class="hp" aria-hidden="true" tabindex="-1">{{ _("Your website (leave empty)") }}<input type="text" name="website" autocomplete="off" />
             </label>
-
             <button type="submit" class="contrast">{{ _("Send") }}</button>
           </form>
         </section>
@@ -357,7 +357,7 @@
               links.forEach((a) => a.classList.remove("is-active"));
               const a = map.get(e.target.id);
               if (a) a.classList.add("is-active");
-              history.replaceState(null, "", "#" + e.target.id);
+              history.replaceState(null, "", location.pathname + location.search + "#" + e.target.id);
             }
           });
         },
@@ -440,11 +440,19 @@
               e.preventDefault();
               const lang = a.getAttribute("data-lang");
               const url = new URL(location.href);
-              url.searchParams.set("lang", lang); // збережемо інші параметри та hash
+
+              // встановлюємо мову
+              url.searchParams.set("lang", lang);
+
+              // якщо потрібно зберегти поточний хеш (#present, #contact...)
+              if (location.hash) {
+                url.hash = location.hash;
+              }
+
+              // перехід на нову адресу з мовою
               location.href = url.toString();
             });
           });
-        });
 
         // глобально: клік поза меню/ESC — закрити
         document.addEventListener("click", (e) => {
