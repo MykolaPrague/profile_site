@@ -5,33 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ _("Portfolio") }} – {{ name }}</title>
 
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Honk&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap" rel="stylesheet"/>
 
-    <link rel="icon" href="/static/favicon.ico" />
-    <link rel="apple-touch-icon" href="/static/icon-180.png" />
-    <link rel="manifest" href="/static/site.webmanifest" />
+    <link rel="icon" href="/static/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/static/icon-180.png"/>
+    <link rel="manifest" href="/static/site.webmanifest"/>
   </head>
   <body>
     <header class="container sticky-bar">
@@ -44,36 +29,17 @@
           </ul>
           <ul class="nav-right">
             <li class="lang-switch">
-              <button
-                class="lang-btn contrast outline"
-                type="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                aria-label="Change language"
-              >
+              <button class="lang-btn contrast outline" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
                 <span class="lang-current">EN</span> ▾
               </button>
               <ul class="lang-menu" role="menu" aria-label="Languages">
-                <li role="none">
-                  <a role="menuitem" data-lang="uk">{{ _("Ukrainian") }}</a>
-                </li>
-                <li role="none">
-                  <a role="menuitem" data-lang="cs">{{ _("Czech") }}</a>
-                </li>
-                <li role="none">
-                  <a role="menuitem" data-lang="en">{{ _("English") }}</a>
-                </li>
+                <li role="none"><a role="menuitem" data-lang="uk">{{ _("Ukrainian") }}</a></li>
+                <li role="none"><a role="menuitem" data-lang="cs">{{ _("Czech") }}</a></li>
+                <li role="none"><a role="menuitem" data-lang="en">{{ _("English") }}</a></li>
               </ul>
             </li>
             <li>
-              <button
-                id="themeToggle"
-                class="contrast outline"
-                type="button"
-                aria-label="{{ _('Toggle theme') }}"
-              >
-                🌙/☀️
-              </button>
+              <button id="themeToggle" class="contrast outline" type="button" aria-label="{{ _('Toggle theme') }}">🌙/☀️</button>
             </li>
           </ul>
         </nav>
@@ -87,9 +53,7 @@
                 <summary>{{ _("Menu") }}</summary>
                 <ul>
                   <li><a href="#present" data-nav>{{ _("Profile") }}</a></li>
-                  <li>
-                    <a href="#projects" data-nav>{{ _("My projects") }}</a>
-                  </li>
+                  <li><a href="#projects" data-nav>{{ _("My projects") }}</a></li>
                   <li><a href="#contact" data-nav>{{ _("Contacts") }}</a></li>
                 </ul>
               </details>
@@ -97,75 +61,43 @@
           </ul>
           <ul>
             <li>
-              <button
-                id="themeToggle"
-                class="contrast outline"
-                type="button"
-                aria-label="{{ _('Toggle theme') }}"
-              >
-                🌙/☀️
-              </button>
+              <button id="themeToggle" class="contrast outline" type="button" aria-label="{{ _('Toggle theme') }}">🌙/☀️</button>
             </li>
             <li class="lang-switch">
-              <button
-                class="lang-btn contrast outline"
-                type="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                aria-label="Change language"
-              >
+              <button class="lang-btn contrast outline" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
                 <span class="lang-current">EN</span> ▾
               </button>
               <ul class="lang-menu" role="menu" aria-label="Languages">
-                <li role="none">
-                  <a role="menuitem" data-lang="uk">{{ _("Українська") }}</a>
-                </li>
-                <li role="none">
-                  <a role="menuitem" data-lang="cs">{{ _("Čeština") }}</a>
-                </li>
-                <li role="none">
-                  <a role="menuitem" data-lang="en">{{ _("English") }}</a>
-                </li>
+                <li role="none"><a role="menuitem" data-lang="uk">{{ _("Українська") }}</a></li>
+                <li role="none"><a role="menuitem" data-lang="cs">{{ _("Čeština") }}</a></li>
+                <li role="none"><a role="menuitem" data-lang="en">{{ _("English") }}</a></li>
               </ul>
             </li>
           </ul>
         </nav>
       </div>
     </header>
+
     <main id="main" class="container">
       <!-- HERO / PRESENT -->
-      <section
-        id="present"
-        class="panel hero fullvh"
-        aria-labelledby="present-title"
-      >
+      <section id="present" class="panel hero fullvh" aria-labelledby="present-title">
         <div class="hero-inner">
           <h1 id="present-title" class="hello">{{ name }}</h1>
 
-          <img
-            class="avatar"
-            src="{{ url_for('static', filename='avatar2.png') }}"
-            alt="{{ _('%(name)s avatar', name=name) }}"
-          />
+          <img class="avatar" src="{{ url_for('static', filename='avatar2.png') }}" alt="{{ _('%(name)s avatar', name=name) }}"/>
 
           <h3>{{ _("Hi, my name is %(name)s", name=name) }}</h3>
 
           <p class="myinfo">
-            {%- trans trimmed -%} I’m a Prague-based Computer Science graduate
-            🎓 building lean web apps and prototypes: Python on the backend 👨‍💻
-            (Flask/Django), HTML/CSS/JS on the frontend, and a growing toolkit
-            of automation and data utilities 🤖📊. I care about readable code,
-            small iterations, and design that stays out of the way ✨. Lately
-            I’ve been exploring applied AI—classification, embeddings, and tiny
-            agents that reduce repetitive work—and sharing lightweight write-ups
-            so others can build on top of my findings. {%- endtrans -%}
+            {%- trans trimmed -%}
+            I’m a Prague-based Computer Science graduate 🎓 building lean web apps and prototypes: Python on the backend 👨‍💻 (Flask/Django), HTML/CSS/JS on the frontend, and a growing toolkit of automation and data utilities 🤖📊. I care about readable code, small iterations, and design that stays out of the way ✨. Lately I’ve been exploring applied AI—classification, embeddings, and tiny agents that reduce repetitive work—and sharing lightweight write-ups so others can build on top of my findings.
+            {%- endtrans -%}
           </p>
 
           <p>
-            {%- trans trimmed -%} Beyond tech, I’m into fishing, long walks with
-            podcasts 🎧, and the occasional street photography 📷. I’m happiest
-            when a simple script unlocks real-world value for someone. {%-
-            endtrans -%}
+            {%- trans trimmed -%}
+            Beyond tech, I’m into fishing, long walks with podcasts 🎧, and the occasional street photography 📷. I’m happiest when a simple script unlocks real-world value for someone.
+            {%- endtrans -%}
           </p>
 
           <p>
@@ -175,56 +107,35 @@
 
           <div class="cta">
             <a href="#projects" role="button">{{ _("View projects") }}</a>
-            <a href="#contact" class="secondary" role="button"
-              >{{ _("Contact") }}</a
-            >
+            <a href="#contact" class="secondary" role="button">{{ _("Contact") }}</a>
           </div>
         </div>
       </section>
 
       <!-- PROJECTS -->
-      <section
-        id="projects"
-        class="panel fullvh"
-        aria-labelledby="projects-title"
-      >
+      <section id="projects" class="panel fullvh" aria-labelledby="projects-title">
         <h2 id="projects-title">{{ _("My projects") }}</h2>
 
         <p class="tagline">
-          {%- trans trimmed -%} Python / Flask / Django · CRM mini-projects ·
-          Simple and practical web tools · AI-curious {%- endtrans -%}
+          {%- trans trimmed -%}
+          Python / Flask / Django · CRM mini-projects · Simple and practical web tools · AI-curious
+          {%- endtrans -%}
         </p>
 
         <ul>
           <li>
-            <a
-              href="https://lamik.pythonanywhere.com"
-              target="_blank"
-              rel="noopener"
-            >
-              <img
-                class="fish"
-                src="{{ url_for('static', filename='fishman.png') }}"
-                alt="{{ _('%(name)s avatar', name=name) }}"
-              />
+            <a href="https://lamik.pythonanywhere.com" target="_blank" rel="noopener">
+              <img class="fish" src="{{ url_for('static', filename='fishman.png') }}" alt="{{ _('%(name)s avatar', name=name) }}"/>
             </a>
           </li>
           <li>
-            <a
-              href="https://lamik.pythonanywhere.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://lamik.pythonanywhere.com" target="_blank" rel="noopener noreferrer">
               {{ _("Fishlog (Django) – demo") }}
             </a>
           </li>
           <li>{{ _("CRM Mini (Flask) – demo/description") }}</li>
           <li>
-            <a
-              href="https://mykolaprague.github.io/curlytom.github.io/index.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://mykolaprague.github.io/curlytom.github.io/index.html" target="_blank" rel="noopener noreferrer">
               {{ _("Simple Web") }}
             </a>
           </li>
@@ -232,107 +143,51 @@
       </section>
 
       <!-- CONTACT -->
-      <section
-        id="contact"
-        class="panel fullvh"
-        aria-labelledby="contact-title"
-      >
+      <section id="contact" class="panel fullvh" aria-labelledby="contact-title">
         <h2 id="contact-title">{{ _("Contacts") }}</h2>
 
         <p>
-          {%- trans trimmed -%} For collaborations, freelance work, or just to
-          say hi—reach out anytime. {%- endtrans -%}
+          {%- trans trimmed -%}
+          For collaborations, freelance work, or just to say hi—reach out anytime.
+          {%- endtrans -%}
         </p>
+
         <div class="contact-buttons">
           <ul>
             <li>
-              <a
-                class="contrast outline"
-                href="https://t.me/yourhandle"
-                target="_blank"
-                rel="noopener"
-                >💬 {{ _("Telegram") }}</a
-              >
-            </li>
-            <!--
-            <li>
-              <a
-                class="contrast outline"
-                href="https://www.linkedin.com/in/yourhandle"
-                target="_blank"
-                rel="noopener"
-                >👔 {{ _("LinkedIn") }}</a
-              >
-            </li>
-            -->
-            <li>
-              <a
-                class="contrast outline"
-                href="https://github.com/yourhandle"
-                target="_blank"
-                rel="noopener"
-                >🧑‍💻 {{ _("GitHub") }}</a
-              >
+              <a class="contrast outline" href="https://t.me/yourhandle" target="_blank" rel="noopener">💬 {{ _("Telegram") }}</a>
             </li>
             <li>
-              <a
-                class="contrast outline"
-                href="https://www.upwork.com/freelancers/~yourprofile"
-                target="_blank"
-                rel="noopener"
-                >🧰 {{ _("Upwork") }}</a
-              >
+              <a class="contrast outline" href="https://github.com/yourhandle" target="_blank" rel="noopener">🧑‍💻 {{ _("GitHub") }}</a>
             </li>
-            <!--
             <li>
-              <a
-                class="contrast outline"
-                href="https://x.com/yourhandle"
-                target="_blank"
-                rel="noopener"
-                >🐦 {{ _("X / Twitter") }}</a
-              >
+              <a class="contrast outline" href="https://www.upwork.com/freelancers/~yourprofile" target="_blank" rel="noopener">🧰 {{ _("Upwork") }}</a>
             </li>
-            -->
             <li>
-              <a
-                class="contrast outline"
-                href="https://www.buymeacoffee.com/yourhandle"
-                target="_blank"
-                rel="noopener"
-                >☕ {{ _("Support") }}</a
-              >
+              <a class="contrast outline" href="https://www.buymeacoffee.com/yourhandle" target="_blank" rel="noopener">☕ {{ _("Support") }}</a>
             </li>
           </ul>
         </div>
+
         <div id="flash-zone">
-          {% with messages = get_flashed_messages(with_categories=true) %} {%
-          for category, text in messages %}
-          <article
-            class="{{ 'success' if category=='success' else 'secondary' }} flash-msg"
-            role="alert"
-          >
-            {{ text }}
-            <button class="close" aria-label="Close">&times;</button>
-          </article>
-          {% endfor %} {% endwith %}
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, text in messages %}
+              <article class="{{ 'success' if category=='success' else 'secondary' }} flash-msg" role="alert">
+                {{ text }}
+                <button class="close" aria-label="Close">&times;</button>
+              </article>
+            {% endfor %}
+          {% endwith %}
         </div>
+
         <section id="contact-form-section" class="container">
           <h2>{{ _("Contact") }}</h2>
           <form action="/contact?lang={{ current_locale }}" method="post">
             <input type="hidden" name="lang" value="{{ current_locale }}">
-            <label>{{ _("Name") }}<input type="text" name="name" required />
-            </label>
-
-            <label>{{ _("Email") }}<input type="email" name="email" required />
-            </label>
-
-            <label>{{ _("Message") }}<textarea name="message" rows="5" required></textarea>
-            </label>
-
-            <!-- Honeypot: приховане поле, люди не заповнюють, боти часто — так -->
-            <label class="hp" aria-hidden="true" tabindex="-1">{{ _("Your website (leave empty)") }}<input type="text" name="website" autocomplete="off" />
-            </label>
+            <label>{{ _("Name") }}<input type="text" name="name" required /></label>
+            <label>{{ _("Email") }}<input type="email" name="email" required /></label>
+            <label>{{ _("Message") }}<textarea name="message" rows="5" required></textarea></label>
+            <label class="hp" aria-hidden="true" tabindex="-1">{{ _("Your website (leave empty)") }}<input type="text" name="website" autocomplete="off"/></label>
             <button type="submit" class="contrast">{{ _("Send") }}</button>
           </form>
         </section>
@@ -343,89 +198,66 @@
       </section>
     </main>
 
-    <!-- JS: theme toggle + active link on scroll -->
+    <!-- JS -->
     <script>
-      // Smooth active link highlight
-      const links = document.querySelectorAll("a[data-nav]");
-      const map = new Map(
-        [...links].map((a) => [a.getAttribute("href").slice(1), a])
-      );
-      const io = new IntersectionObserver(
-        (entries) => {
+      // --- Active link on scroll, preserving ?lang ---
+      (function () {
+        const links = document.querySelectorAll("a[data-nav]");
+        const map = new Map([...links].map(a => [a.getAttribute("href").slice(1), a]));
+        const io = new IntersectionObserver((entries) => {
           entries.forEach((e) => {
-            if (e.isIntersecting) {
-              links.forEach((a) => a.classList.remove("is-active"));
-              const a = map.get(e.target.id);
-              if (a) a.classList.add("is-active");
-              history.replaceState(null, "", location.pathname + location.search + "#" + e.target.id);
-            }
-          });
-        },
-        { rootMargin: "-40% 0px -55% 0px", threshold: [0, 0.25, 1] }
-      );
-      document.querySelectorAll("section[id]").forEach((s) => io.observe(s));
+            if (!e.isIntersecting) return;
+            links.forEach(a => a.classList.remove("is-active"));
+            const a = map.get(e.target.id);
+            if (a) a.classList.add("is-active");
 
-      // === Language Switch ===
+            // preserve path + search (?lang=..), change only hash
+            const url = new URL(location.href);
+            url.hash = e.target.id;
+            history.replaceState(null, "", url.toString());
+          });
+        }, { rootMargin: "-40% 0px -55% 0px", threshold: [0, 0.25, 1] });
+        document.querySelectorAll("section[id]").forEach(s => io.observe(s));
+      })();
+
+      // --- Language Switch ---
       (function () {
         const mapLabel = { uk: "UK", cs: "CS", en: "EN" };
 
-        // поточна мова: краще з серверу, інакше з URL
-        const currentLang =
-          (function () {
-            try {
-              return "{{ current_locale or '' }}";
-            } catch (e) {
-              /* not templated */
-            }
-            const p = new URLSearchParams(location.search);
-            return p.get("lang") || "en";
-          })() || "en";
+        function getCurrentLang() {
+          try { return "{{ current_locale or '' }}"; } catch (e) {}
+          const p = new URLSearchParams(location.search);
+          return p.get("lang") || "en";
+        }
+        const currentLang = getCurrentLang() || "en";
 
-        // Закрити всі відкриті меню
         function closeAll() {
-          document
-            .querySelectorAll(".lang-menu.show")
-            .forEach((m) => m.classList.remove("show"));
-          document
-            .querySelectorAll('.lang-btn[aria-expanded="true"]')
-            .forEach((b) => b.setAttribute("aria-expanded", "false"));
+          document.querySelectorAll(".lang-menu.show").forEach(m => m.classList.remove("show"));
+          document.querySelectorAll('.lang-btn[aria-expanded="true"]').forEach(b => b.setAttribute("aria-expanded","false"));
         }
 
-        // Ініціалізуємо кожний .lang-switch окремо
-        document.querySelectorAll(".lang-switch").forEach((sw) => {
+        document.querySelectorAll(".lang-switch").forEach(sw => {
           const btn = sw.querySelector(".lang-btn");
           const menu = sw.querySelector(".lang-menu");
           const curEl = sw.querySelector(".lang-current");
-
           if (!btn || !menu || !curEl) return;
 
-          // показуємо поточну мову на кнопці
-          curEl.textContent =
-            mapLabel[currentLang] || currentLang.toUpperCase();
+          curEl.textContent = mapLabel[currentLang] || currentLang.toUpperCase();
 
-          // підсвітити активну мову в меню
-          menu.querySelectorAll("[data-lang]").forEach((a) => {
-            if (a.getAttribute("data-lang") === currentLang)
-              a.classList.add("is-active");
+          menu.querySelectorAll("[data-lang]").forEach(a => {
+            if (a.getAttribute("data-lang") === currentLang) a.classList.add("is-active");
           });
 
-          // відкриття/закриття конкретного меню
           function toggleMenu(show) {
-            const willShow =
-              typeof show === "boolean"
-                ? show
-                : !menu.classList.contains("show");
-            closeAll(); // один відкритий за раз
+            const willShow = (typeof show === "boolean") ? show : !menu.classList.contains("show");
+            closeAll();
             if (willShow) {
               menu.classList.add("show");
-              btn.setAttribute("aria-expanded", "true");
-              (
-                menu.querySelector(".is-active") ||
-                menu.querySelector("[data-lang]")
-              )?.focus();
+              btn.setAttribute("aria-expanded","true");
+              (menu.querySelector(".is-active") || menu.querySelector("[data-lang]"))?.focus();
             } else {
               menu.classList.remove("show");
-              btn.setAttribute("aria-expanded", "false");
+              btn.setAttribute("aria-expanded","false");
             }
           }
 
@@ -434,27 +266,20 @@
             toggleMenu();
           });
 
-          // вибір мови
-          menu.querySelectorAll("[data-lang]").forEach((a) => {
+          menu.querySelectorAll("[data-lang]").forEach(a => {
             a.addEventListener("click", (e) => {
               e.preventDefault();
               const lang = a.getAttribute("data-lang");
               const url = new URL(location.href);
-
-              // встановлюємо мову
+              // keep current hash, set language
               url.searchParams.set("lang", lang);
-
-              // якщо потрібно зберегти поточний хеш (#present, #contact...)
-              if (location.hash) {
-                url.hash = location.hash;
-              }
-
-              // перехід на нову адресу з мовою
+              if (location.hash) url.hash = location.hash;
+              closeAll();
               location.href = url.toString();
             });
           });
+        });
 
-        // глобально: клік поза меню/ESC — закрити
         document.addEventListener("click", (e) => {
           if (!e.target.closest(".lang-switch")) closeAll();
         });
@@ -462,23 +287,22 @@
           if (e.key === "Escape") closeAll();
         });
       })();
-      // Theme toggle (persisted)
+
+      // --- Theme toggle (persisted) ---
       (function () {
         const root = document.documentElement;
         const saved = localStorage.getItem("theme");
-        if (saved === "light" || saved === "dark")
-          root.setAttribute("data-theme", saved);
+        if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
         function toggleTheme() {
           const cur = root.getAttribute("data-theme") || "light";
-          const next = cur === "light" ? "dark" : "light";
+          const next = (cur === "light" ? "dark" : "light");
           root.setAttribute("data-theme", next);
           localStorage.setItem("theme", next);
         }
-        document
-          .querySelectorAll('[id="themeToggle"]')
-          .forEach((b) => b.addEventListener("click", toggleTheme));
+        document.querySelectorAll('#themeToggle').forEach(b => b.addEventListener("click", toggleTheme));
       })();
-      // автозникання через 4с
+
+      // --- Flash auto-hide ---
       setTimeout(() => {
         document.querySelectorAll(".flash-msg").forEach((el) => {
           el.classList.add("hide");
@@ -486,34 +310,23 @@
         });
       }, 10000);
 
-      // ручне закриття
-      document.querySelectorAll(".flash-msg .close").forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-          const box = e.currentTarget.closest(".flash-msg");
-          box.classList.add("hide");
-          setTimeout(() => box.remove(), 350);
-        });
+      // close button for flash
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest(".flash-msg .close");
+        if (!btn) return;
+        const box = btn.closest(".flash-msg");
+        box.classList.add("hide");
+        setTimeout(() => box.remove(), 350);
       });
 
-      // підстрахуємо скрол до секції #contact (іноді браузер не прокручує миттєво)
+      // Ensure scroll to #contact if present
       if (location.hash === "#contact") {
         const el = document.getElementById("contact");
-        if (el)
-          setTimeout(
-            () => el.scrollIntoView({ behavior: "smooth", block: "start" }),
-            50
-          );
-      }
-        // якщо прийшли саме на #contact — вимкнемо плавність на один кадр і стрибнемо миттєво
-      if (location.hash === '#contact') {
-        document.documentElement.classList.add('no-smooth');
-        const el = document.getElementById('contact');
         if (el) {
-          // миттєво
+          document.documentElement.classList.add('no-smooth');
           el.scrollIntoView({ behavior: 'auto', block: 'start' });
+          setTimeout(() => document.documentElement.classList.remove('no-smooth'), 50);
         }
-        // повертаємо плавність
-        setTimeout(() => document.documentElement.classList.remove('no-smooth'), 50);
       }
     </script>
   </body>
