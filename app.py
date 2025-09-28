@@ -155,4 +155,4 @@ def send_via_sendgrid(api_key: str, to_addr: str, subject: str, text: str, reply
 
 # -------------------- DEV --------------------
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
