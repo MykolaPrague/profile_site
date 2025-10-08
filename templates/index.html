@@ -176,8 +176,31 @@
             {% endfor %}
           {% endwith %}
         </div>
+        <!-- CONTACT -->
+        <section id="contact" class="panel fullvh" aria-labelledby="contact-title">
+          <h2 id="contact-title">Contacts</h2>
 
-        <section id="contact-form-section" class="container">
+          <p>
+            For collaborations, freelance work, or just to say hi —
+            please reach out via <strong>Upwork</strong> or <strong>GitHub</strong> below.
+          </p>
+
+          <div class="contact-buttons">
+            <ul>
+              <li>
+                <a class="contrast outline" href="https://t.me/yourhandle" target="_blank" rel="noopener">💬 Telegram</a>
+              </li>
+              <li>
+                <a class="contrast outline" href="https://github.com/MykolaPrague" target="_blank" rel="noopener">🧑‍💻 GitHub</a>
+              </li>
+              <li>
+                <a class="contrast outline" href="https://www.upwork.com/freelancers/~01d4779350a70aa648" target="_blank" rel="noopener">
+                  🧰 Upwork
+                </a>
+              </li>
+            </ul>
+          </div>
+        {% comment %} <section id="contact-form-section" class="container">
           <h2>{{ _("Contact") }}</h2>
           <form action="/contact?lang={{ current_locale }}" method="post">
             <input type="hidden" name="lang" value="{{ current_locale }}">
@@ -187,7 +210,7 @@
             <label class="hp" aria-hidden="true" tabindex="-1">{{ _("Your website (leave empty)") }}<input type="text" name="website" autocomplete="off"/></label>
             <button type="submit" class="contrast">{{ _("Send") }}</button>
           </form>
-        </section>
+        </section> {% endcomment %}
 
         <p class="contact-meta">
           📍 {{ _("Prague, Czechia") }} · ⏱️ {{ _("Mon–Fri, 09:00–17:00 CET") }}
