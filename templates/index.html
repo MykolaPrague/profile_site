@@ -148,7 +148,8 @@
 
         <p>
           {%- trans trimmed -%}
-          For collaborations, freelance work, or just to say hi—reach out anytime.
+          For collaborations, freelance work, or just to say hi —
+          please reach out via <strong>Upwork</strong> or <strong>GitHub</strong> below.
           {%- endtrans -%}
         </p>
 
@@ -176,31 +177,11 @@
             {% endfor %}
           {% endwith %}
         </div>
-        <!-- CONTACT -->
-        <section id="contact" class="panel fullvh" aria-labelledby="contact-title">
-          <h2 id="contact-title">Contacts</h2>
 
-          <p>
-            For collaborations, freelance work, or just to say hi —
-            please reach out via <strong>Upwork</strong> or <strong>GitHub</strong> below.
-          </p>
-
-          <div class="contact-buttons">
-            <ul>
-              <li>
-                <a class="contrast outline" href="#" target="_blank" rel="noopener">💬 Telegram</a>
-              </li>
-              <li>
-                <a class="contrast outline" href="https://github.com/MykolaPrague" target="_blank" rel="noopener">🧑‍💻 GitHub</a>
-              </li>
-              <li>
-                <a class="contrast outline" href="https://www.upwork.com/freelancers/~01d4779350a70aa648" target="_blank" rel="noopener">
-                  🧰 Upwork
-                </a>
-              </li>
-            </ul>
-          </div>
-        {% comment %} <section id="contact-form-section" class="container">
+        {# Contact form is disabled to comply with Upwork rules (no direct contact collection).
+           Keep the form below for future use by removing this Jinja comment block. #}
+        {#
+        <section id="contact-form-section" class="container">
           <h2>{{ _("Contact") }}</h2>
           <form action="/contact?lang={{ current_locale }}" method="post">
             <input type="hidden" name="lang" value="{{ current_locale }}">
@@ -210,7 +191,8 @@
             <label class="hp" aria-hidden="true" tabindex="-1">{{ _("Your website (leave empty)") }}<input type="text" name="website" autocomplete="off"/></label>
             <button type="submit" class="contrast">{{ _("Send") }}</button>
           </form>
-        </section> {% endcomment %}
+        </section>
+        #}
 
         <p class="contact-meta">
           📍 {{ _("Prague, Czechia") }} · ⏱️ {{ _("Mon–Fri, 09:00–17:00 CET") }}
@@ -220,7 +202,7 @@
 
     <!-- JS -->
     <script>
-      // --- Active link on scroll, preserving ?lang ---
+      // Active link on scroll (preserves ?lang)
       (function () {
         const links = document.querySelectorAll("a[data-nav]");
         const map = new Map([...links].map(a => [a.getAttribute("href").slice(1), a]));
@@ -231,19 +213,17 @@
             const a = map.get(e.target.id);
             if (a) a.classList.add("is-active");
 
-            // preserve path + search (?lang=..), change only hash
             const url = new URL(location.href);
-            url.hash = e.target.id;
-            history.replaceState(null, "", url.toString());
+            url.hash = e.target.id;               // keep path+search, change only hash
+            history.replaceState(null, "", url);
           });
         }, { rootMargin: "-40% 0px -55% 0px", threshold: [0, 0.25, 1] });
         document.querySelectorAll("section[id]").forEach(s => io.observe(s));
       })();
 
-      // --- Language Switch ---
+      // Language Switch (keeps current hash)
       (function () {
         const mapLabel = { uk: "UK", cs: "CS", en: "EN" };
-
         function getCurrentLang() {
           try { return "{{ current_locale or '' }}"; } catch (e) {}
           const p = new URLSearchParams(location.search);
@@ -291,8 +271,7 @@
               e.preventDefault();
               const lang = a.getAttribute("data-lang");
               const url = new URL(location.href);
-              // keep current hash, set language
-              url.searchParams.set("lang", lang);
+              url.searchParams.set("lang", lang); // set language
               if (location.hash) url.hash = location.hash;
               closeAll();
               location.href = url.toString();
@@ -308,7 +287,7 @@
         });
       })();
 
-      // --- Theme toggle (persisted) ---
+      // Theme toggle (persisted)
       (function () {
         const root = document.documentElement;
         const saved = localStorage.getItem("theme");
@@ -322,7 +301,7 @@
         document.querySelectorAll('#themeToggle').forEach(b => b.addEventListener("click", toggleTheme));
       })();
 
-      // --- Flash auto-hide ---
+      // Flash auto-hide
       setTimeout(() => {
         document.querySelectorAll(".flash-msg").forEach((el) => {
           el.classList.add("hide");
@@ -330,7 +309,7 @@
         });
       }, 10000);
 
-      // close button for flash
+      // Flash manual close
       document.addEventListener("click", (e) => {
         const btn = e.target.closest(".flash-msg .close");
         if (!btn) return;
@@ -339,7 +318,7 @@
         setTimeout(() => box.remove(), 350);
       });
 
-      // Ensure scroll to #contact if present
+      // If arriving with #contact, ensure we jump immediately (avoid smooth delay)
       if (location.hash === "#contact") {
         const el = document.getElementById("contact");
         if (el) {
