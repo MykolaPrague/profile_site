@@ -6,7 +6,7 @@ featuring multilingual support, email contact form, and clean responsive design.
 ---
 
 ### 🚀 Live Demo  
-👉 [profile-site-uplk.onrender.com](https://profile-site-eu.onrender.com/)
+👉 [https://profile-site-eu.onrender.com](https://profile-site-eu.onrender.com)
 
 > ⚠️ **Note:** This site is hosted on a free Render plan —  
 > it may take up to 30–60 seconds to “wake up” after inactivity (cold start).
